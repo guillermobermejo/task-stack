@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: taskstack-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: taskstack
+      POSTGRES_PASSWORD: taskstack
+      POSTGRES_DB: taskstack
+    volumes:
+      - taskstack_pgdata:/var/lib/postgresql/data
+
+volumes:
+  taskstack_pgdata:
